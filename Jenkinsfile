@@ -9,12 +9,8 @@ pipeline {
         stage('test') { 
             steps {
                 dir ('testing-junit5-mockito') {
-                    sh 'mvn test package'
+                    sh 'ssh veso@192.168.1.130 ls /home/veso/.ssh'
                 }
-                
-                dir ('target') {
-                    sh 'ssh'
-}
             }
         }        
     }
