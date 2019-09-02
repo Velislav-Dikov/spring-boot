@@ -9,16 +9,9 @@ pipeline {
         stage('move') { 
             steps {
                 dir ('testing-junit5-mockito') {
-    sh 'pwd'
-}
+                    sh 'mvn test'
+                }
             }
-        }
-        
-        stage('test') { 
-            steps {
-                sh 'ls'
-            }
-        }
-        
+        }        
     }
 }
