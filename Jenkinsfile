@@ -11,6 +11,10 @@ pipeline {
                 dir ('testing-junit5-mockito') {
                     sh 'mvn test'
                 }
+                
+                 dir ('testing-junit5-mockito') {
+                    sh 'mvn package'
+                }
             }
         }        
     }
