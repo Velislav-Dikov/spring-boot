@@ -8,13 +8,8 @@ pipeline {
     stages {
         stage('test') { 
             steps {
-                sh 'mvn test' 
-            }
-        }
-        stage('Build') { 
-            steps {
-                sh 'mvn package'
-' 
+                sh 'cd testing-junit5-mockito'
+                sh 'mvn test'
             }
         }
     }
