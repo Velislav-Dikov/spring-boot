@@ -13,7 +13,7 @@ pipeline {
                 }
                 
                 dir ('target') {
-                    sh 'scp'
+                    sh 'ssh'
 }
             }
         }        
