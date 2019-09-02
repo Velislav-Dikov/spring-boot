@@ -6,11 +6,17 @@ pipeline {
         }
     }
     stages {
-        stage('test') { 
+        stage('move') { 
             steps {
                 sh 'cd testing-junit5-mockito'
+            }
+        }
+        
+        stage('test') { 
+            steps {
                 sh 'ls'
             }
         }
+        
     }
 }
