@@ -9,7 +9,7 @@ pipeline {
         stage('test') { 
             steps {
                 dir ('testing-junit5-mockito') {
-                    sh 'ssh veso@192.168.1.130 ls /home/veso/.ssh'
+                    sh 'sshPut'
                 }
             }
         }        
