@@ -9,8 +9,6 @@ pipeline {
     stages {
         
         stage('test') { 
-        
-        sh 'ssh'
             steps {
                 dir ('testing-junit5-mockito') {
                     sh 'ls'
