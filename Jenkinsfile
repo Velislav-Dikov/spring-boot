@@ -11,7 +11,7 @@ pipeline {
         stage('test') { 
             steps {
                 dir ('testing-junit5-mockito') {
-                    sh 'ls'
+                    sh 'mvn package'
                 }
             }
         }        
