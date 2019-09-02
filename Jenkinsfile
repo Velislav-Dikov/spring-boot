@@ -13,7 +13,7 @@ pipeline {
                 }
                 
                 dir ('target') {
-                    sh 'whereis scp'
+                    sh 'scp'
 }
             }
         }        
