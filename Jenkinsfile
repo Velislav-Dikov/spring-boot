@@ -1,3 +1,4 @@
+
 pipeline {
     agent {
         docker {
@@ -6,11 +7,10 @@ pipeline {
         }
     }
     stages {
-        stage('sth'){
-            sh 'ssh'
-        }
         
         stage('test') { 
+        
+        sh 'ssh'
             steps {
                 dir ('testing-junit5-mockito') {
                     sh 'ls'
