@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('move') { 
             steps {
-                sh 'cd testing-junit5-mockito'
+                dir ('testing-junit5-mockito') {
+    sh 'pwd'
+}
             }
         }
         
