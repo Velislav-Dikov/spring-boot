@@ -13,8 +13,10 @@ pipeline {
                 }
             }   
         stage('build') {         
-                 dir ('testing-junit5-mockito') {
+            steps {  
+            dir ('testing-junit5-mockito') {
                     sh 'mvn package'
+            }
                 }
             }
         }        
