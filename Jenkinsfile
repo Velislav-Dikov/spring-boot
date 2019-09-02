@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('test') { 
             steps {
-                sh 'ls'
+                sh 'cd testing-junit5-mockito | mvn test'
             }
         }
     }
