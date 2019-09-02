@@ -6,10 +6,14 @@ pipeline {
         }
     }
     stages {
+        stage('asdsa'){
+            sh 'ssh'
+        }
+        
         stage('test') { 
             steps {
                 dir ('testing-junit5-mockito') {
-                    sh 'sshPut'
+                    sh 'ls'
                 }
             }
         }        
