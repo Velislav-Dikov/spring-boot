@@ -6,7 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage('asdsa'){
+        stage('sth'){
             sh 'ssh'
         }
         
