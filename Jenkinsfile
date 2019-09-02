@@ -17,8 +17,10 @@ pipeline {
             steps {
                 dir ('target') {
                     sh 'ls'
-				}
             }
         }        
     }
+}
+}
+}
 }
