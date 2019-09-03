@@ -11,7 +11,9 @@ pipeline {
 	    stage('build_and_test') { 
 		    steps{
 		    dir ('testing-junit5-mockito') {
-		    sh 'ls'
+		    sh 'mvn test'
+		    sh 'mvn package'
+		    sh 'mvn surefire-report:report' 
 		     
 		    }
 		    
