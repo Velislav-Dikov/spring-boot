@@ -48,7 +48,7 @@ pipeline {
 	  }
 post {         
         always { 
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'testing-junit5-mockito/target/site', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'testing-junit5-mockito/target/site', reportFiles: 'surefire-report.html,java-app-report.html', reportName: 'HTML Report', reportTitles: ''])
         }
     }
 }
