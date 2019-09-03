@@ -9,7 +9,7 @@ pipeline {
 		    }
 	    }
 	    stage('build_and_test') { 
-			steps{
+		    steps{
 		    dir ('testing-junit5-mockito') {
 		    sh 'mvn test'
 		    sh 'mvn package'
@@ -39,12 +39,8 @@ pipeline {
 				
 		        
 		        }
-      	}
-	    
-	    
-	     
-	    
-    }
+      		}
+	  }
 post {         
         always { 
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'testing-junit5-mockito/target/site', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
