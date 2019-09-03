@@ -23,7 +23,7 @@ pipeline {
             steps {
             
 				dir ('testing-junit5-mockito') {
-                    sh 'scp -r veso@192.168.1.130:/home/veso/Downloads'
+                    sh 'scp -r target veso@192.168.1.130:/home/veso/Downloads'
                 }
             
             }
@@ -31,4 +31,3 @@ pipeline {
             
             }
 }
-/**wrong**/
