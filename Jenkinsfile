@@ -6,7 +6,7 @@ pipeline {
 		    agent any
 		    steps{
 		    dir ('testing-junit5-mockito') {
-		    sh 'rm-rf target'
+		    sh 'rm -rf target'
 		    }
 		    }
 	    }
