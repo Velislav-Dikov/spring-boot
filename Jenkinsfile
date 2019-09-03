@@ -22,9 +22,11 @@ pipeline {
             }
         }
     }
-	    stage('Publish test results') {
-      junit '**/test-results/test/*.xml'
-  } 
+	  post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }
 
 }
 
