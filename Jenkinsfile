@@ -10,12 +10,7 @@ pipeline {
 		    }
 	    }
 	    stage('build_and_test') { 
-		
-			dir ('testing-junit5-mockito') {
-                    sh 'mvn test'
-		    sh 'mvn package'
-			
-		}
+			sh 'ls'
 		}
        
     }
