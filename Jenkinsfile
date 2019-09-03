@@ -10,7 +10,7 @@ pipeline {
 		    }
 	    }
 	    stage('build_and_test') { 
-		agent any
+		
 			dir ('testing-junit5-mockito') {
                     sh 'mvn test'
 		    sh 'mvn package'
