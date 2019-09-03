@@ -1,5 +1,5 @@
 pipeline {
-    agent none    
+    agent any    
     stages {
 	    stage('remove_old_code'){
 		    agent any
