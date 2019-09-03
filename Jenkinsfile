@@ -39,6 +39,7 @@ pipeline {
 				sh 'ssh veso@192.168.1.130 sudo systemctl status java-app >> java-app-report.html'
 				sh 'echo "------------------------ ---Curl test result--------------------------------" >> java-app-report.html'
 				sh 'curl -v 192.168.1.130:8080 >> java-app-report.html'
+				sh 'mv java-app-report.html target/site'
 			}
 		        
 		        }
