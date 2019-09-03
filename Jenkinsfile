@@ -8,7 +8,8 @@ pipeline {
 		}
 	steps {
 		dir ('testing-junit5-mockito') {
-                    sh 'mvn test'
+                    sh 'rm -rf'
+		    sh 'mvn test'
 		    sh 'mvn package'
                 }
             }
