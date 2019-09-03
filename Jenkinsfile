@@ -1,6 +1,6 @@
 
 pipeline {
-    agent any    
+    agent none    
     stages {
 	    stage('remove_old_code'){
 		    agent any
@@ -34,6 +34,7 @@ pipeline {
     }
 post {
       always {
+	agent any
         junit '**/target/surefire-reports/*.xml'
       }
    } 
