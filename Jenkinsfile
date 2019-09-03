@@ -35,6 +35,7 @@ pipeline {
 			steps{
 			dir ('testing-junit5-mockito') {
 		                sleep(time:20,unit:"SECONDS")
+				touch 'java-app-report.html'
 				sh 'echo "-----------------------------Service status---------------------------------" >> java-app-report.html'
 				sh 'ssh veso@192.168.1.130 sudo systemctl status java-app >> java-app-report.html'
 				sh 'echo "------------------------ ---Curl test result--------------------------------" >> java-app-report.html'
