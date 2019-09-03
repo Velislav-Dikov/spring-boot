@@ -23,6 +23,7 @@ pipeline {
         }
     }
 	   post {
+	agent any
       always {
         junit '**/reports/junit/*.xml'
       }
