@@ -1,22 +1,21 @@
 
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
-        }
-    }
+    agent none
+        
     stages {
         
         stage('test') { 
+			agent {
+                docker { image 'maven:3-alpine' }
+            }
             steps {
-                dir ('testing-junit5-mockito') {
+            
+				dir ('testing-junit5-mockito') {
                     sh 'mvn package'
                 }
-       
-	}
-}
-
-}
-}
-/** correct **/
+            
+            }
+            }
+            
+            }
+            }
