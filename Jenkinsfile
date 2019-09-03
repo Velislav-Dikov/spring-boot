@@ -33,7 +33,6 @@ pipeline {
         }
     }
 post {
-	agent any
       always {
         junit '**/target/surefire-reports/*.xml'
       }
