@@ -34,7 +34,7 @@ pipeline {
         }
         
         stage('app_test') { 
-			agent any
+			agent none
 			steps{
 				sh 'ssh veso@192.168.1.130 sudo systemctl status java-app'
 				sh 'curl -v 192.168.1.130:8080'
