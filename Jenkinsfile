@@ -2,7 +2,6 @@ pipeline {
     agent any    
     stages {
 	    stage('remove_old_code'){
-		    agent any
 		    steps{
 		    dir ('testing-junit5-mockito') {
 		    sh 'rm -rf target'
@@ -10,7 +9,6 @@ pipeline {
 		    }
 	    }
 	    stage('build_and_test') { 
-			agent any
 			steps{
 		    dir ('testing-junit5-mockito') {
 		    sh 'ls'
@@ -21,8 +19,7 @@ pipeline {
 		}
 		
 		stage('Deploy_and_restart') { 
-		agent any
-            	steps {
+		   	steps {
             		dir ('testing-junit5-mockito') {
 			    sh 'ssh veso@192.168.1.130 sudo systemctl stop java-app'
 			    sh 'ssh veso@192.168.1.130 rm -rf /home/veso/Downloads/target'
@@ -32,8 +29,7 @@ pipeline {
             }
         }
         
-        stage('app_test') { 
-			agent any
+        stage('app_test') {
 			steps{
 		                sleep(time:20,unit:"SECONDS")
 		                sh 'curl -v 192.168.1.130:8080'
