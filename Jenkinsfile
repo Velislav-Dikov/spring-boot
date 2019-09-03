@@ -2,6 +2,7 @@ pipeline {
     agent none    
     stages {
 	    stage('remove_old_code'){
+		    sleep(time:10,unit:"SECONDS")
 		    agent any
 		    steps{
 		    dir ('testing-junit5-mockito') {
@@ -36,11 +37,10 @@ pipeline {
         stage('app_test') { 
 			agent any
 			steps{
-				
-				dir ('testing-junit5-mockito') {
+		                sleep(time:10,unit:"SECONDS")
 		                sh 'curl -v 192.168.1.130:8080'
 		                sh 'ssh veso@192.168.1.130 sudo systemctl status java-app'
-				}
+				
 		        
 		    }
 	}
