@@ -22,12 +22,10 @@ pipeline {
             }
         }
     }
-	   post {
-	agent any
-      always {
-        junit '**/reports/junit/*.xml'
-      }
-   } 
+	    stage('Publish test results') {
+      junit '**/test-results/test/*.xml'
+  } 
+
 }
 
 
