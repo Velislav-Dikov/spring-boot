@@ -47,12 +47,9 @@ pipeline {
 	     
 	    
     }
-post { 
-        agent any
-        steps{
+post {         
         always { 
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'test1/testing-junit5-mockito/target/site', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
-      } 
         }
     }
 }
