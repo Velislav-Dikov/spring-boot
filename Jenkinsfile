@@ -31,11 +31,14 @@ pipeline {
             }
         }
         
-        stage('app_test') {
+        stage('app_test_and_moving_reports') {
 			steps{
 		                sleep(time:20,unit:"SECONDS")
-		                sh 'curl -v 192.168.1.130:8080'
-		                sh 'ssh veso@192.168.1.130 sudo systemctl status java-app'
+				sh 'touch java-app-report.html'
+				sh 'echo '-----------------------------Process status---------------------------------' >> java-app-report.html'
+				sh 'ssh veso@192.168.1.130 sudo systemctl status java-app >> java-app-report.html'
+				sh 'echo '-----------------------curltest from a remote host--------------------------' >> java-app-report.html'
+				sh 'curl -v 192.168.1.130:8080 >> java-app-report.html'
 				
 		        
 		        }
