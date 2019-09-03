@@ -5,11 +5,19 @@ pipeline {
 		    agent any
 		    steps{
 		    dir ('testing-junit5-mockito') {
-		    sh 'ssh veso@192.168.1.130 ls'
+		    sh 'rm -rf target'
 		    }
 		    }
 	    }
-	    
+	    stage('build_and_test') { 
+		agent {
+			dir ('testing-junit5-mockito') {
+                    sh 'mvn test'
+		    sh 'mvn package'
+                }
+			
+		}
+		}
        
     }
 
