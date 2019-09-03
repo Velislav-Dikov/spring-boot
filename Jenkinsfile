@@ -10,7 +10,15 @@ pipeline {
 		    }
 	    }
 	    stage('build_and_test') { 
-			sh 'ls'
+			agent any
+			steps{
+		    dir ('testing-junit5-mockito') {
+		    sh 'mvn test'
+		    sh 'mvn package'
+		    sh 'mvn surefire-report:report'  
+		    }
+		    
+		  }
 		}
        
     }
