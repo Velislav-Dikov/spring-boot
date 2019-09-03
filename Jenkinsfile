@@ -23,7 +23,7 @@ pipeline {
             steps {
             
 				dir ('testing-junit5-mockito') {
-                    sh 'ssh'
+                    sh 'ls'
                 }
             
             }
