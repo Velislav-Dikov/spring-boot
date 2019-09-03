@@ -1,6 +1,6 @@
 
 pipeline {
-    agent any    
+    agent none    
     stages {
         stage('build_and_test') { 
 		agent {
@@ -24,6 +24,7 @@ pipeline {
         }
     }
 	  post {
+		  agent any
         always {
             junit '**/target/surefire-reports/*.xml'
         }
