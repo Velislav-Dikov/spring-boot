@@ -2,14 +2,19 @@
 pipeline {
     agent none    
     stages {
+	    stage('remove_old_code'){
+		    dir ('testing-junit5-mockito') {
+		    sh 'rm-rf target'
+		    }
+	    }
+	    
         stage('build_and_test') { 
 		agent {
                 	docker { image 'maven:3-alpine' }
 		}
 	steps {
 		dir ('testing-junit5-mockito') {
-                    sh 'rm -rf target'
-		    sh 'mvn test'
+                    sh 'mvn test'
 		    sh 'mvn package'
                 }
             }
