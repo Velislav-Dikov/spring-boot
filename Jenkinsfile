@@ -19,7 +19,7 @@ pipeline {
             
             
             stage('test1') { 
-			
+			agent any
             steps {
             
 				dir ('testing-junit5-mockito') {
@@ -31,4 +31,3 @@ pipeline {
             
             }
             }
-/** wrong **/
