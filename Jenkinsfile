@@ -38,14 +38,12 @@ pipeline {
 			steps{
 				
 				dir ('testing-junit5-mockito') {
-		        sh 'ssh veso@192.168.1.130 sudo systemctl status java-app'
-				sh 'curl -v 192.168.1.130:8080'
+		                sh 'curl -v 192.168.1.130:8080'
+		                sh 'ssh veso@192.168.1.130 sudo systemctl status java-app'
 				}
 		        
 		    }
-		    
-		  
-		}
+	}
        
     }
 
