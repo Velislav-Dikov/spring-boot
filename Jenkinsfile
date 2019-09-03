@@ -41,9 +41,8 @@ pipeline {
 				sh 'echo "------------------------ ---Curl test result--------------------------------" >> java-app-report.html'
 				sh 'curl -v 192.168.1.130:8080 >> java-app-report.html'
 				sh 'mv java-app-report.html target/site'
-			}
-		        
-		        }
+			    }
+		      }
       		}
 	  }
 post {         
