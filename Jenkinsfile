@@ -4,7 +4,6 @@ pipeline {
 	    stage('remove_old_code'){
 		    agent any
 		    steps{
-		    sleep(time:10,unit:"SECONDS")
 		    dir ('testing-junit5-mockito') {
 		    sh 'rm -rf target'
 		    }
