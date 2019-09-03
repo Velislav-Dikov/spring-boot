@@ -32,6 +32,15 @@ pipeline {
                 }
             }
         }
+        
+        stage('app_test') { 
+			agent any
+			steps{
+				sh 'curl 192.168.1.130:8080'
+		    }
+		    
+		  }
+		}
        
     }
 
